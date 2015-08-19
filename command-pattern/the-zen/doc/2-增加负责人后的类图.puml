@@ -1,0 +1,33 @@
+@startuml
+'抽象组
+abstract class Group {
+{abstract} void find()
+{abstract} void add()
+{abstract} void delete()
+{abstract} void change()
+{abstract} void plan()
+}
+'需求组
+class RequirementGroup
+'美工组
+class PageGroup
+'编码组
+class CodeGroup
+'客户
+class Client
+
+'负责人，根据客户的命令安排不同的组员工作
+class Invoker {
+'String类型的参数没有约束力，太过灵活，不是好的方案
+void setCommand(String cmd)
+void action()
+}
+
+
+Group <|-- RequirementGroup
+Group <|-- PageGroup
+Group <|-- CodeGroup
+Invoker ..> Group
+Client -right--> Invoker
+
+@enduml

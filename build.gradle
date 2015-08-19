@@ -3,7 +3,7 @@ allprojects {
     version = '1.0-SNAPSHOT'
 }
 
-subprojects {
+configure(subprojects.findAll { it.name.indexOf("pattern") == -1 }) {
     apply plugin: 'java'
     apply plugin: 'idea'
 
@@ -20,5 +20,4 @@ subprojects {
         testCompile "junit:junit:${junitVersion}"
         testCompile "org.codehaus.groovy:groovy:${groovyVersion}"
     }
-
 }

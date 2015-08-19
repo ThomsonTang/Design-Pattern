@@ -5,7 +5,7 @@ package com.thomson.practice.dp.hf.cmd;
  *
  * @author Thomson Tang
  */
-public class RoomLight implements Light {
+public class LivingRoomLight implements Light {
     @Override
     public void on() {
         System.out.println("the room light is on...");

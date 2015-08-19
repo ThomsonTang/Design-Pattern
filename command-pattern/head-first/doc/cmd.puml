@@ -9,12 +9,11 @@ setCommand()
 interface Receiver
 class Client
 
-Command <|-- ConcreteCommand
-ConcreteCommand -> Receiver
-Invoker -> Command
-Client -> ConcreteCommand
 Client -> Receiver
-
+ConcreteCommand -down-> Client
+Command <|-- ConcreteCommand
+ConcreteCommand --> Receiver
+Invoker -> Command
 
 class ConcreteCommand {
 execute()

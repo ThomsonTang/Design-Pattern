@@ -16,7 +16,7 @@ public class SimpleRemoteControlTest {
     @Before
     public void prepare() {
         this.simpleRemoteControl = new SimpleRemoteControl();
-        this.light = new RoomLight();
+        this.light = new LivingRoomLight();
         this.garageDoor = new GarageDoor();
     }
 

@@ -1,0 +1,18 @@
+@startuml
+
+abstract class Group {
+{abstract} void find()
+{abstract} void add()
+{abstract} void delete()
+{abstract} void change()
+{abstract} void plan()
+}
+class RequirementGroup
+class PageGroup
+class CodeGroup
+
+Group <|-- RequirementGroup
+Group <|-- PageGroup
+Group <|-- CodeGroup
+
+@enduml
