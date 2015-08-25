@@ -21,3 +21,4 @@ configure(subprojects.findAll { it.name.indexOf("pattern") == -1 }) {
         testCompile "org.codehaus.groovy:groovy:${groovyVersion}"
     }
 }
+// test for git branches

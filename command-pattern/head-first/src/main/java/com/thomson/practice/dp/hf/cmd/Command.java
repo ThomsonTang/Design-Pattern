@@ -6,6 +6,6 @@ package com.thomson.practice.dp.hf.cmd;
  * @author Thomson Tang
  */
 public interface Command {
-
     void execute();
+    void undo();
 }
