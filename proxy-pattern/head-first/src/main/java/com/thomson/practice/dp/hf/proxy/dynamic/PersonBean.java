@@ -20,5 +20,5 @@ public interface PersonBean {
 
     void setInterests(String interests);
 
-    void setHotOrNotRanking(int rating);
+    void setHotOrNotRanking(int rating) throws Exception;
 }

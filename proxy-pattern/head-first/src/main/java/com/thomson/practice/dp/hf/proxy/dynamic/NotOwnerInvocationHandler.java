@@ -5,6 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * step one: create the InvocationHandler
+ * <p/>
  * the InvocationHandler for a person who is not himself to invoke.
  *
  * @author Thomson Tang

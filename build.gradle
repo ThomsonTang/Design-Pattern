@@ -14,9 +14,15 @@ configure(subprojects.findAll { it.name.indexOf("pattern") == -1 }) {
     ext {
         junitVersion = '4.11'
         groovyVersion = '2.4.3'
+        guavaVersion = '17.0'
+        slf4jVersion = '1.7.7'
+        logbackVersion = '1.1.3'
     }
 
     dependencies {
+        compile "com.google.guava:guava:${guavaVersion}"
+        compile "org.slf4j:slf4j-api:${slf4jVersion}"
+        compile "ch.qos.logback:logback-classic:${logbackVersion}"
         testCompile "junit:junit:${junitVersion}"
         testCompile "org.codehaus.groovy:groovy:${groovyVersion}"
     }

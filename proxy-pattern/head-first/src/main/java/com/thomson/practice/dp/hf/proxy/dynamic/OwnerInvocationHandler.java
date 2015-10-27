@@ -5,6 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * step one: create the InvocationHandler
+ * <p/>
  * the InvocationHandler for a person invoke himself.
  *
  * @author Thomson Tang
@@ -21,7 +23,7 @@ public class OwnerInvocationHandler implements InvocationHandler {
         try {
             if (method.getName().startsWith("get")) {
                 return method.invoke(personBean, args);
-            } else if (method.getName().equals("setHotOrNotRating")) {
+            } else if (method.getName().equals("setHotOrNotRanking")) {
                 throw new IllegalAccessException();
             } else if (method.getName().startsWith("set")) {
                 return method.invoke(personBean, args);
