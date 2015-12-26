@@ -1,0 +1,30 @@
+@startuml
+
+interface Subject {
+request()
+}
+
+Subject <|-- RealSubject
+Subject <|-- Proxy
+
+class RealSubject {
+request()
+}
+
+interface InvocationHandler {
+invoke()
+}
+
+InvocationHandler <|-- TheInvocationHandler
+RealSubject <-- TheInvocationHandler
+Proxy -right-> TheInvocationHandler
+
+class TheInvocationHandler {
+invoke()
+}
+
+class Proxy {
+request()
+}
+
+@enduml

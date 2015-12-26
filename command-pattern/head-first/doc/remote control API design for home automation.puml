@@ -1,0 +1,45 @@
+@startuml
+
+interface Command {
+execute()
+}
+
+interface Light {
+on()
+off()
+}
+
+class LightOnCommand {
+Light light
+}
+class LightOffCommand {
+Light light
+}
+
+class LivingRoomLight {
+}
+class KitchenLight {
+}
+
+class RemoteControl {
+Command[] onCommands
+Command[] offCommands
+setCommand()
+onButtonPushed()
+offButtonPushed()
+}
+
+class RemoteLoader {
+}
+
+Command <|.. LightOnCommand
+Command <|.. LightOffCommand
+Light <|.. LivingRoomLight
+Light <|.. KitchenLight
+RemoteControl "1" *--> "many" Command
+LightOnCommand *--> Light
+LightOffCommand *--> Light
+RemoteLoader ..> Light
+RemoteLoader ..> LightOnCommand
+
+@enduml

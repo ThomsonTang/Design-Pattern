@@ -1,2 +1,10 @@
-rootProject.name='design-pattern'
+rootProject.name = 'design-pattern'
 include 'headfirst-dp'
+
+include 'design-principles'
+include 'command-pattern:head-first'
+include 'command-pattern:the-zen'
+include 'factory-pattern:head-first'
+include 'factory-pattern:the-zen'
+include 'proxy-pattern:head-first'
+include 'proxy-pattern:the-zen'
