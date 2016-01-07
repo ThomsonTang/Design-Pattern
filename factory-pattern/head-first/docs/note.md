@@ -1,4 +1,4 @@
-# Factory Pattern 烘烤OO的精
+# Factory Pattern 烘烤OO的精华
 
 > 当看到`new`, 就会想到**"具体"**  
 
@@ -103,4 +103,39 @@ public class SimplePizzaFactory {
 ```
 
 ## 关于静态工厂
-还有一种比较常见的技巧是将**创建新对象的方法**声明为`static`的。这样就省去了创建简单工厂对象实例的过程。称之为**静态工厂方法**。但是需要注意的是，**静态工厂**也有它自己的缺点，例如无法通过继承来改变创建方法的行为。
+还有一种比较常见的技巧是将**创建新对象的方法**声明为`static`的。这样就省去了创建简单工厂对象实例的过程。称之为**静态工厂方法**。但是需要注意的是，静态工厂也有它自己的缺点，例如无法通过继承来改变创建方法的行为。
+
+```java
+public class SimpleStaticPizzaFactory {
+  public static Pizza createPizza(String type) {
+    // 同上
+    ......
+  }
+}
+```
+
+## 重构客户端代码PizzaStore
+创建好**工厂**之后，我们就可以修改客户端的代码了，我们要做的就是**让工厂为我们创造出Pizza**。如下代码：
+
+```java
+public class PizzaStore {
+  private SimplePizzaFactory factory;
+
+  //这里通过构造方法注入依赖的SimplePizzaFactory
+  public PizzaStore(SimplePizzaFactory factory) {
+    this.factory = factory;
+  }
+
+  public Pizza orderPizza(String type) {
+    // 此处调用工厂方法来创建Pizza
+    Pizza pizza = factory.createPizza(type);
+
+    // 其他统一的流程工序
+    pizza.prepare();
+    pizza.bake();
+    pizza.cut();
+    pizza.box();
+    return pizza;
+  }
+}
+```
