@@ -139,3 +139,6 @@ public class PizzaStore {
   }
 }
 ```
+
+## 为PizzaStore授权经营分店
+假设PizzaStore可以授权在不同地域经营分店，每个分店的pizza拥有当地的特色口味，那么该如何实现呢？
