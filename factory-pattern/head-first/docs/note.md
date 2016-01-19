@@ -141,4 +141,59 @@ public class PizzaStore {
 ```
 
 ## 为PizzaStore授权经营分店
-假设PizzaStore可以授权在不同地域经营分店，每个分店的pizza拥有当地的特色口味，那么该如何实现呢？
+假设PizzaStore可以授权在不同地域经营分店，并且每个分店的做出的pizza拥有当地的特色口味，那么该如何实现呢？
+
+### 方法一
+鉴于前面例子中`PizzaStore`和`SimplePizzaFactory`的组合，我们考虑到可以**创建不同地域的PizzaFactory**，然后选择合适的Factory，再与PizzaStore组合，最终完成一个分店的功能。可能的代码实现如下：
+
+```java
+NYSimplePizzaFactory nySimplePizzaFactory = new NYSimplePizzaFactory();
+PizzaStore nyPizzaStore = new PizzaStore(nySimplePizzaFactory);
+nyPizzaStore.orderPizza("cheese");
+
+ChicagoPizzaFactory chicagoPizzaFactory = new ChicagoPizzaFactory();
+PizzaStore chicagoPizzaStore = new PizzaStore(chicagoPizzaStore);
+chicagoPizzaStore.orderPizza("cheese");
+```
+虽然这种方法能够实现分店的功能，但是存在的问题是：由于Pizza的制作过程定义在抽象类`Pizza`中，所以可能存在总店无法控制Pizza的生产过程，比如某些分店烘烤的时间可能会短一些，或者忘记切块，或者使用不同的包装等问题。
+仔细思考一下这个问题，你会发现我们真正的需求无非就是**创建一套框架，将每个店与Pizza的制作过程关联起来，并且保持一定的灵活性**。
+
+### 方法二
+将`createPizza()`方法放回到`PizzaStore`中，并且将其声明为**抽象方法**，然后为每一个分店创建一个`PizzaStore`的子类来表示该分店。  
+先来看看更改后的`PizzaStore`:
+
+```java
+public abstract class PizzaStore {
+  public Pizza orderPizza(String type) {
+    Pizza pizza;
+
+    pizza = createPizza(type);
+
+    pizza.prepare();
+    pizza.bake();
+    pizza.cut();
+    pizza.box();
+
+    return pizza;
+  }
+
+  abstract Pizza createPizza(String type);
+}
+```
+
+由于`createPizza()`是一个抽象方法，所以`PizzaStore`类也应该是抽象的。这样如果要创建一个加盟店，只需继承`PizzaStore`这个抽象类即可。  
+如下我们尝试创建一个PizzaStore。
+
+```java
+public class NYPizzaStore extends PizzaStore {
+  public Pizza createPizza(String type) {
+    if (type.equals("cheese")) {
+      return new NYStyleCheesePizza();
+    } else if (type.equals("clam")) {
+      return new NYStyleClamPizza();
+    } else if (type.equals("veggie")) {
+      return new NYStyleVeggiePizza();
+    } else return null;
+  }
+}
+```
