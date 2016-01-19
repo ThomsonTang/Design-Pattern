@@ -114,7 +114,7 @@ public class SimpleStaticPizzaFactory {
 }
 ```
 
-## 重构客户端代码PizzaStore
+## 重构PizzaStore类
 创建好**工厂**之后，我们就可以修改客户端的代码了，我们要做的就是**让工厂为我们创造出Pizza**。如下代码：
 
 ```java
@@ -140,11 +140,11 @@ public class PizzaStore {
 }
 ```
 
-## 为PizzaStore授权经营分店
-假设PizzaStore可以授权在不同地域经营分店，并且每个分店的做出的pizza拥有当地的特色口味，那么该如何实现呢？
+## 给PizzaStore授权经营加盟店
+假设PizzaStore可以授权在不同地域经营加盟店，并且每个加盟店做出的pizza拥有当地的特色口味，那么该如何实现呢？
 
-### 方法一
-鉴于前面例子中`PizzaStore`和`SimplePizzaFactory`的组合，我们考虑到可以**创建不同地域的PizzaFactory**，然后选择合适的Factory，再与PizzaStore组合，最终完成一个分店的功能。可能的代码实现如下：
+### 为每个加盟店创建一个对应的工厂
+鉴于前面例子中`PizzaStore`和`SimplePizzaFactory`的组合，我们考虑到可以**创建不同地域的PizzaFactory**，然后选择合适的Factory，再与PizzaStore组合，最终完成一个加盟店的功能。可能的代码实现如下：
 
 ```java
 NYSimplePizzaFactory nySimplePizzaFactory = new NYSimplePizzaFactory();
@@ -155,11 +155,36 @@ ChicagoPizzaFactory chicagoPizzaFactory = new ChicagoPizzaFactory();
 PizzaStore chicagoPizzaStore = new PizzaStore(chicagoPizzaStore);
 chicagoPizzaStore.orderPizza("cheese");
 ```
-虽然这种方法能够实现分店的功能，但是存在的问题是：由于Pizza的制作过程定义在抽象类`Pizza`中，所以可能存在总店无法控制Pizza的生产过程，比如某些分店烘烤的时间可能会短一些，或者忘记切块，或者使用不同的包装等问题。
-仔细思考一下这个问题，你会发现我们真正的需求无非就是**创建一套框架，将每个店与Pizza的制作过程关联起来，并且保持一定的灵活性**。
+这种做法保证了加盟店是采用我们创建的工厂来制作pizza，但是对于订单的其他流程他们可能会采用自己的方式，比如某些加盟店烘烤的时间可能会短一些，或者忘记切块，或者使用不同的包装等。例如有人可能会创建如下所述的一个`TexasPizzaStore`：
 
-### 方法二
-将`createPizza()`方法放回到`PizzaStore`中，并且将其声明为**抽象方法**，然后为每一个分店创建一个`PizzaStore`的子类来表示该分店。  
+```java
+public class TexasPizzaStore {
+  SimplePizzaFactory factory;
+  public Pizza orderPizza(String type) {
+    Pizza pizza = factory.createPizza(type);
+
+    pizza.prepare();
+    //可能会烘烤两次
+    pizza.bake();
+    pizza.bake();
+
+    //或者可能会取消切块
+    //pizza.cut();
+
+    pizza.box();
+
+    return pizza;
+  }
+}
+```
+也就是说在这种情况下，我们无法控制加盟店在制作流程上的质量，我们希望能够对质量也做到把关。
+
+### 让每个加盟店作为子类来自己创建风味披萨
+仔细思考一下之前的问题，我们真正的需求无非就是**创建一套机制，能够将加盟店和创建Pizza捆绑起来的同时又保持一定的弹性**。那么如何做到这两点呢？
+
+1. 将`createPizza()`方法放回到`PizzaStore`中，这样就将创建披萨与披萨店捆绑起来了。
+2. 要保持一定的弹性，也就意味着对扩展开发，那么我们可以考虑将创建披萨的方法声明为**抽象方法**，然后为每个地域创建一个`PizzaStore`的子类来表示该加盟店。  
+
 先来看看更改后的`PizzaStore`:
 
 ```java
@@ -181,8 +206,14 @@ public abstract class PizzaStore {
 }
 ```
 
-由于`createPizza()`是一个抽象方法，所以`PizzaStore`类也应该是抽象的。这样如果要创建一个加盟店，只需继承`PizzaStore`这个抽象类即可。  
-如下我们尝试创建一个PizzaStore。
+由于`createPizza()`是一个抽象方法，所以`PizzaStore`作为超类也应该是抽象的。这样如果要创建一个加盟店，只需创建一个`PizzaStore`的子类即可，然后由每个子类来决定如何创建披萨。与此同时，方法`orderPizza()`是专门处理订单的，正如之前所说的，我们希望各个加盟店对于订单的处理要保持一致。
+
+如上方法实质上是将**创建披萨的过程放在了子类中进行**，由每个子类负责定义自己的`createPizza()`方法。对于`orderPizza()`方法而言，虽然它对Pizza这个产品做了许多事情，但是Pizza对象对它来讲始终都是抽象的，它并不知道实际上是哪个具体的子类创建了披萨。当`orderPizza()`调用`createPizza()`时，会有一个PizzaStore的子类负责创建披萨。创建什么样的披萨呢？是由具体的比萨店来决定的。那么到底是哪个披萨店呢？这就只能由用户决定要哪家风味的披萨店了。
+
+## 尝试开一家披萨店
+要开加盟店，我们只需要继承`PizzaStore`，然后实现自己的`createPizza()`方法就可以了，其他的功能`PizzaStore`已为我们免费提供了。
+
+如下我们尝试创建一个New York PizzaStore。
 
 ```java
 public class NYPizzaStore extends PizzaStore {
@@ -197,3 +228,20 @@ public class NYPizzaStore extends PizzaStore {
   }
 }
 ```
+
+同理，我们再创建一个Chicago PizzaStore:
+
+```java
+public class ChicagoPizzaStore {
+  public Pizza createPizza() {
+    if (type.equals("cheese")) {
+      return new ChicagoStyleCheesePizza();
+    } else if (type.equals("clam")) {
+      return new ChicagoStyleClamPizza();
+    } else if (type.equals("veggie")) {
+      return new ChicagoStyleVeggiePizza();
+    } else return null;
+  }
+}
+```
+以上实例中，我们定义的抽象方法`createPizza()`就是一个**工厂方法(factory method)**。
