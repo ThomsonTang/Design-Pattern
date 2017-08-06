@@ -9,6 +9,11 @@ import com.thomson.hfdp.ch1.intro.impl.Quack;
  * @version Created: 06/08/2017.
  */
 public class MallardDuck extends Duck {
+    @Override
+    public void display() {
+
+    }
+
     public MallardDuck() {
         quackBehavior = new Quack();
     }
