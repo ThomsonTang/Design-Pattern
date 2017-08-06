@@ -10,11 +10,11 @@ public class A {
         i.method1();
     }
 
-    public void depend2(I i) {
+    public void depend2(designprinciples.isp.I i) {
         i.method2();
     }
 
-    public void depend3(I i) {
+    public void depend3(designprinciples.isp.I i) {
         i.method3();
     }
 }
