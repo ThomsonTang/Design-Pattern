@@ -1,9 +1,9 @@
 allprojects {
-    group = 'com.thomsontang.practice'
+    group = 'com.thomsontang.desingpattern'
     version = '1.0-SNAPSHOT'
 }
 
-configure(subprojects.findAll { it.name.indexOf("pattern") == -1 }) {
+subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
 
