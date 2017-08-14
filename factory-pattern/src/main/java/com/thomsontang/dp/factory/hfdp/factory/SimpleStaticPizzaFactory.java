@@ -1,8 +1,8 @@
 package com.thomsontang.dp.factory.hfdp.factory;
 
-import com.thomson.practice.dp.hf.factory.entity.CheesePizza;
-import com.thomson.practice.dp.hf.factory.entity.GreekPizza;
-import com.thomson.practice.dp.hf.factory.entity.Pizza;
+import com.thomsontang.dp.factory.hfdp.domain.CheesePizza;
+import com.thomsontang.dp.factory.hfdp.domain.GreekPizza;
+import com.thomsontang.dp.factory.hfdp.domain.Pizza;
 
 /**
  * the static factory method.

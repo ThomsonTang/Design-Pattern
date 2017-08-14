@@ -1,6 +1,7 @@
 package com.thomsontang.dp.factory.hfdp;
 
-import com.thomson.practice.dp.hf.factory.entity.Pizza;
+import com.thomsontang.dp.factory.hfdp.domain.Pizza;
+import com.thomsontang.dp.factory.hfdp.factory.SimplePizzaFactory;
 
 /**
  * 客户端调用类
