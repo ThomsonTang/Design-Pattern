@@ -1,4 +1,4 @@
-package com.thomson.practice.dp.hf.factory.simplefactory;
+package com.thomsontang.dp.factory.hfdp;
 
 import com.thomson.practice.dp.hf.factory.entity.Pizza;
 

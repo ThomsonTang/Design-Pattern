@@ -1,4 +1,4 @@
-package com.thomson.practice.dp.hf.factory.entity;
+package com.thomsontang.dp.factory.hfdp.domain;
 
 /**
  * The greek pizza

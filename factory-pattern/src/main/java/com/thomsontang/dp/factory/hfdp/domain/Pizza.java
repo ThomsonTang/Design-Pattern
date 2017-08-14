@@ -1,4 +1,4 @@
-package com.thomson.practice.dp.hf.factory.entity;
+package com.thomsontang.dp.factory.hfdp.domain;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

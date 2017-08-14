@@ -3,7 +3,6 @@ include 'headfirst-dp'
 
 include 'design-principles'
 include 'command-pattern'
-include 'factory-pattern:head-first'
-include 'factory-pattern:the-zen'
+include 'factory-pattern'
 include 'proxy-pattern:head-first'
 include 'proxy-pattern:the-zen'
