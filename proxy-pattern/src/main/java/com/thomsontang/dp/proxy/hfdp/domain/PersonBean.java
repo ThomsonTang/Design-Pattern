@@ -1,4 +1,4 @@
-package com.thomson.practice.dp.hf.proxy.dynamic;
+package com.thomsontang.dp.proxy.hfdp.domain;
 
 /**
  * the interface describe the properties of a person and the rate rank for him.

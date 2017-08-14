@@ -1,4 +1,8 @@
-package com.thomson.practice.dp.hf.proxy.dynamic;
+package com.thomsontang.dp.proxy.hfdp;
+
+import com.thomsontang.dp.proxy.hfdp.domain.PersonBean;
+import com.thomsontang.dp.proxy.hfdp.handler.NotOwnerInvocationHandler;
+import com.thomsontang.dp.proxy.hfdp.handler.OwnerInvocationHandler;
 
 import java.lang.reflect.Proxy;
 
@@ -26,8 +30,8 @@ public class MatchMakingTestDrive {
      */
     public PersonBean getOwnerProxy(PersonBean person) {
         return (PersonBean) Proxy
-            .newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(),
-                new OwnerInvocationHandler(person));
+                .newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(),
+                        new OwnerInvocationHandler(person));
     }
 
     /**
@@ -38,7 +42,7 @@ public class MatchMakingTestDrive {
      */
     public PersonBean getNotOwnerProxy(PersonBean person) {
         return (PersonBean) Proxy
-            .newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(),
-                new NotOwnerInvocationHandler(person));
+                .newProxyInstance(person.getClass().getClassLoader(), person.getClass().getInterfaces(),
+                        new NotOwnerInvocationHandler(person));
     }
 }

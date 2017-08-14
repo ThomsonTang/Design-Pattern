@@ -1,4 +1,6 @@
-package com.thomson.practice.dp.hf.proxy.dynamic;
+package com.thomsontang.dp.proxy.hfdp.handler;
+
+import com.thomsontang.dp.proxy.hfdp.domain.PersonBean;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;

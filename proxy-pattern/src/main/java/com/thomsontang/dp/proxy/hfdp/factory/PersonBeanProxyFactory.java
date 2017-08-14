@@ -1,4 +1,8 @@
-package com.thomson.practice.dp.hf.proxy.dynamic;
+package com.thomsontang.dp.proxy.hfdp.factory;
+
+import com.thomsontang.dp.proxy.hfdp.domain.PersonBean;
+import com.thomsontang.dp.proxy.hfdp.handler.NotOwnerInvocationHandler;
+import com.thomsontang.dp.proxy.hfdp.handler.OwnerInvocationHandler;
 
 import java.lang.reflect.Proxy;
 

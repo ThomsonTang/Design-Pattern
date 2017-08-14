@@ -7,7 +7,7 @@
         </layout>
     </appender>
 
-    <logger name="com.thomson.practice.dp.hf" level="TRACE"/>
+    <logger name="com.thomsontang.dp.proxy" level="info"/>
 
 
     <root level="debug">
