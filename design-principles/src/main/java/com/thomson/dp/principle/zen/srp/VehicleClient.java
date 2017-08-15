@@ -1,4 +1,4 @@
-package com.thomson.practice.srp;
+package com.thomson.dp.principle.zen.srp;
 
 /**
  * "车辆可以载客"的场景类
@@ -6,7 +6,7 @@ package com.thomson.practice.srp;
  * @author Thomson Tang
  * @version Created: 21/02/2017.
  */
-public class Client {
+public class VehicleClient {
     public static void main(String[] args) {
         Vehicle vehicle = new Vehicle();
         vehicle.carry("car"); //汽车可以载客

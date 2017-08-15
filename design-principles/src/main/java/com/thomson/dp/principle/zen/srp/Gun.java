@@ -1,4 +1,4 @@
-package designprinciples.srp;
+package com.thomson.dp.principle.zen.srp;
 
 /**
  * 枪类

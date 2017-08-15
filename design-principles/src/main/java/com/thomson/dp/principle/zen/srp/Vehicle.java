@@ -1,4 +1,4 @@
-package com.thomson.practice.srp;
+package com.thomson.dp.principle.zen.srp;
 
 /**
  * 车辆类

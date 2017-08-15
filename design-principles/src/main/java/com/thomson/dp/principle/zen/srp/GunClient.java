@@ -1,4 +1,4 @@
-package designprinciples.srp;
+package com.thomson.dp.principle.zen.srp;
 
 
 /**
@@ -6,7 +6,7 @@ package designprinciples.srp;
  *
  * @author Thomson Tang
  */
-public class Client {
+public class GunClient {
     public static void main(String[] args) {
         Gun gun = new Gun();
         gun.shoot("手枪");
