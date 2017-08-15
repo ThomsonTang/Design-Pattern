@@ -1,4 +1,4 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp.domain;
 
 /**
  * 士兵的实现类

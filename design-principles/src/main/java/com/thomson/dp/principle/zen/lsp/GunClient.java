@@ -1,4 +1,11 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp;
+
+import com.thomson.dp.principle.zen.lsp.domain.AbstractGun;
+import com.thomson.dp.principle.zen.lsp.domain.Kid;
+import com.thomson.dp.principle.zen.lsp.domain.MachineGun;
+import com.thomson.dp.principle.zen.lsp.domain.Rifle;
+import com.thomson.dp.principle.zen.lsp.domain.Solider;
+import com.thomson.dp.principle.zen.lsp.domain.ToyGun;
 
 /**
  * 里氏替换原则普通枪场景类

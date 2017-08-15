@@ -1,4 +1,7 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp;
+
+import com.thomson.dp.principle.zen.lsp.domain.AUG;
+import com.thomson.dp.principle.zen.lsp.domain.Snipper;
 
 /**
  * 狙击枪业务场景类

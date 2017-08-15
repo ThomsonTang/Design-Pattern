@@ -1,4 +1,7 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp;
+
+import com.thomson.dp.principle.zen.lsp.domain.Operation;
+import com.thomson.dp.principle.zen.lsp.domain.SubOperation;
 
 /**
  * 里氏替换原则

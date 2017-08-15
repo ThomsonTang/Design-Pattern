@@ -1,4 +1,4 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp.domain;
 
 public abstract class AbstractGun {
     /**

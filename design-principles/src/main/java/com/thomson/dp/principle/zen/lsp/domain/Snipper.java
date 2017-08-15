@@ -1,4 +1,4 @@
-package designprinciples.lsp;
+package com.thomson.dp.principle.zen.lsp.domain;
 
 /**
  * AUG狙击手类
