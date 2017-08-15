@@ -1,10 +1,12 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp.impl;
+
+import com.thomsontang.dp.observer.hfdp.Observer;
+import com.thomsontang.dp.observer.hfdp.Subject;
 
 import java.util.ArrayList;
 
 /**
- * The WeatherData which provide register for observer and notify all observers when
- * the weather measurement changed.
+ * The WeatherData which provide register for observer and notify all observers when the weather measurement changed.
  *
  * @author Thomson Tang
  * @version 1.0-SNAPSHOT

@@ -1,4 +1,4 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp.impl;
 
 import java.util.Observable;
 

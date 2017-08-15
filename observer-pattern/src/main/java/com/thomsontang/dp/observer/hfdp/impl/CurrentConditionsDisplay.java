@@ -1,4 +1,8 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp.impl;
+
+import com.thomsontang.dp.observer.hfdp.DisplayElement;
+import com.thomsontang.dp.observer.hfdp.Observer;
+import com.thomsontang.dp.observer.hfdp.Subject;
 
 /**
  * display current weather conditions.

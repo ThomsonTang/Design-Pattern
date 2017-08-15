@@ -1,4 +1,6 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp.impl;
+
+import com.thomsontang.dp.observer.hfdp.DisplayElement;
 
 import java.util.Observable;
 import java.util.Observer;

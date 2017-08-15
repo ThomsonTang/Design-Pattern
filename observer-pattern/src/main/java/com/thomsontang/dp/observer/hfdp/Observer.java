@@ -1,4 +1,4 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp;
 
 /**
  * The Observer interface is implemented by all observers.
@@ -10,9 +10,10 @@ package observerpattern;
 public interface Observer {
     /**
      * update the state values from the subject when a weather measurement changed.
-     * @param temp
-     * @param humidity
-     * @param pressure
+     *
+     * @param temp     温度
+     * @param humidity 湿度
+     * @param pressure 气压
      */
-    public void update(float temp, float humidity, float pressure);
+    void update(float temp, float humidity, float pressure);
 }

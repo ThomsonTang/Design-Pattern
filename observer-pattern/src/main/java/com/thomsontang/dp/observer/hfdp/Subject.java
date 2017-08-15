@@ -1,4 +1,4 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp;
 
 /**
  * The subject interface.
@@ -10,13 +10,11 @@ package observerpattern;
 public interface Subject {
     /**
      * register an observer
-     * @param observer
      */
     public void registerObserver(Observer observer);
 
     /**
      * remove an observer
-     * @param observer
      */
     public void removeObserver(Observer observer);
 

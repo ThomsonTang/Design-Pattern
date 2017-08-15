@@ -1,7 +1,12 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp;
+
+import com.thomsontang.dp.observer.hfdp.impl.CurrentConditionsDisplay;
+import com.thomsontang.dp.observer.hfdp.impl.CurrentConditionsDisplay2;
+import com.thomsontang.dp.observer.hfdp.impl.WeatherData;
+import com.thomsontang.dp.observer.hfdp.impl.WeatherData2;
 
 /**
- * Created with IntelliJ IDEA.
+ * 天气气象台
  *
  * @author Thomson Tang
  * @version 1.0-SNAPSHOT

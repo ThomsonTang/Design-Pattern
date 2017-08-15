@@ -1,7 +1,7 @@
-package observerpattern;
+package com.thomsontang.dp.observer.hfdp;
 
 /**
- * the display interface
+ * the display interface.
  *
  * @author Thomson Tang
  * @version 1.0-SNAPSHOT
@@ -11,5 +11,5 @@ public interface DisplayElement {
     /**
      * display some element.
      */
-    public void display();
+    void display();
 }
