@@ -1,4 +1,4 @@
-package designprinciples.isp;
+package com.thomson.dp.principle.zen.isp;
 
 /**
  * Created by Intellij idea.
@@ -10,11 +10,11 @@ public class A {
         i.method1();
     }
 
-    public void depend2(designprinciples.isp.I i) {
+    public void depend2(I i) {
         i.method2();
     }
 
-    public void depend3(designprinciples.isp.I i) {
+    public void depend3(I i) {
         i.method3();
     }
 }

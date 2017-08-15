@@ -1,4 +1,4 @@
-package designprinciples.dip;
+package com.thomson.dp.principle.zen.dip;
 
 /**
  * 汽车接口
@@ -6,5 +6,5 @@ package designprinciples.dip;
  * @author Thomson Tang
  */
 public interface ICar {
-    public void run();
+    void run();
 }

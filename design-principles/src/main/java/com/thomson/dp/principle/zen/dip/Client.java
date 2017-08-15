@@ -1,4 +1,4 @@
-package designprinciples.dip;
+package com.thomson.dp.principle.zen.dip;
 
 /**
  * DIP依赖导致原则场景类

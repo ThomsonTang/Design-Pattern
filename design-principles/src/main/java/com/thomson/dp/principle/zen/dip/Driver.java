@@ -1,4 +1,4 @@
-package designprinciples.dip;
+package com.thomson.dp.principle.zen.dip;
 
 /**
  * 司机实现类
@@ -8,11 +8,13 @@ package designprinciples.dip;
 public class Driver implements IDriver {
     private ICar car = null;
 
-    @Override public void drive() {
+    @Override
+    public void drive() {
         this.car.run();
     }
 
-    @Override public void setCar(ICar car) {
+    @Override
+    public void setCar(ICar car) {
         this.car = car;
     }
 }

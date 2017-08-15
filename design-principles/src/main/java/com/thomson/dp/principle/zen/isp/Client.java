@@ -1,4 +1,4 @@
-package designprinciples.isp;
+package com.thomson.dp.principle.zen.isp;
 
 /**
  * Created by Intellij idea.
