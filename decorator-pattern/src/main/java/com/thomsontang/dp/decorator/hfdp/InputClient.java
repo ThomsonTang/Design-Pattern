@@ -1,6 +1,10 @@
-package decoratorpattern;
+package com.thomsontang.dp.decorator.hfdp;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Client Test decorator pattern.
@@ -9,7 +13,7 @@ import java.io.*;
  * @version 1.0-SNAPSHOT
  * @date 8/2/13
  */
-public class InputTest {
+public class InputClient {
     public static void main(String[] args) {
         int c;
         try {
