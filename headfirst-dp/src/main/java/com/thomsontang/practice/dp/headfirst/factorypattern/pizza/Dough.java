@@ -1,4 +1,4 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza;
 
 /**
  * Created with IntelliJ IDEA.

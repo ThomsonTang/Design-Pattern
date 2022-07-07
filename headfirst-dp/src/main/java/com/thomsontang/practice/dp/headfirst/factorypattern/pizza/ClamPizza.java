@@ -1,4 +1,6 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza;
+
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.factory.PizzaIngredientFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +17,7 @@ public class ClamPizza extends Pizza {
     }
 
     @Override
-    void prepare() {
+    public void prepare() {
         System.out.println("Preparing " + name);
         dough = ingredientFactory.createDough();
         cheese = ingredientFactory.createCheese();

@@ -1,4 +1,4 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public abstract class Pizza {
     Cheese cheese;
     Clam clam;
 
-    abstract void prepare();
+    public abstract void prepare();
 
 //    void prepare() {
 //        System.out.println("Preparing " + name);
@@ -31,15 +31,15 @@ public abstract class Pizza {
 //        }
 //    }
 
-    void bake() {
+    public void bake() {
         System.out.println("Bake for 25 minutes.");
     }
 
-    void cut() {
+    public void cut() {
         System.out.println("Cutting the pizza into diagonal slices.");
     }
 
-    void box() {
+    public void box() {
         System.out.println("Place pizza in official PizzaStore box.");
     }
 

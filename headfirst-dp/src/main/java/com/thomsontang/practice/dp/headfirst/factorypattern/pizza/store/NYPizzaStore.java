@@ -1,4 +1,10 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza.store;
+
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.CheesePizza;
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.ClamPizza;
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.Pizza;
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.factory.NYPizzaIngredientFactory;
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.factory.PizzaIngredientFactory;
 
 /**
  * Created with IntelliJ IDEA.

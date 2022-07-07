@@ -1,4 +1,4 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class NyStyleCheesePizza extends Pizza {
     }
 
     @Override
-    void prepare() {
+    public void prepare() {
         // empty
     }
 }

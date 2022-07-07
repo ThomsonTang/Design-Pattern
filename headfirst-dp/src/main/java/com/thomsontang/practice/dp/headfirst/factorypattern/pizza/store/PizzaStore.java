@@ -1,4 +1,6 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza.store;
+
+import com.thomsontang.practice.dp.headfirst.factorypattern.pizza.Pizza;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package factorypattern.pizza;
+package com.thomsontang.practice.dp.headfirst.factorypattern.pizza;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,11 +17,12 @@ public class ChicagoStyleCheesePizza extends Pizza {
     }
 
     @Override
-    void prepare() {
+    public void prepare() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    void cut() {
+    @Override
+    public void cut() {
         System.out.println("Cutting the pizza into square slices.");
     }
 }
